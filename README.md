@@ -1,2 +1,2 @@
-# LSP-Implementacao-em-Linguagem-Funcional
+# UFF-LSP-Implementacao-em-Linguagem-Funcional
 Todos os Códigos desenvolvidos enquanto realizávamos, em conjunto com [Danilo Alexandre](https://github.com/TheChronicMasterX), [Eric Maia](https://github.com/3ricz71), [Luiz Eduardo](https://github.com/luiz-lek) e [Marcus Vinícius](https://github.com/MarcusVSV), a Implementação em Linguagem Funcional da Disciplina Linguagens de Programação pelo Curso de Ciência da Computação pela Universidade Federal Fluminense (UFF).
