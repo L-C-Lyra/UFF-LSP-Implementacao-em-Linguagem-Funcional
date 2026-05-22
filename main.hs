@@ -25,6 +25,17 @@ readWordsFile fileName = do
     content <- readFile fileName
     return (words content)
 
+-- Função para verificar se uma palavra está presente em uma lista de palavras
+isInList::String -> [String] -> Bool
+
+-- Função para verificar se uma palavra é uma palavra reservada
+isReservedWord::String -> [String] -> Bool
+isReservedWord word reservedWords = isInList word reservedWords
+
+-- Função para verificar se uma palavra é um separador
+isSeparator::String -> [String] -> Bool
+isSeparator word separators = isInList word separators
+
 -- Função main
 main = do
     putStrLn "Palavras reservadas lidas:"
