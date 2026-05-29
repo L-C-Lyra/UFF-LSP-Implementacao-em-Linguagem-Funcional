@@ -1,5 +1,4 @@
 import Data.List (nub)
-import Distribution.FieldGrammar qualified as Data
 import System.IO
 
 type ReservedWordCount = (String, Int) -- Palavra reservada e contagem de quantas vezes ela aparece
@@ -53,12 +52,6 @@ isReservedWord _ [] = False -- Se a lista de palavras reservadas for nula, retor
 isReservedWord word (r : rs)
   | word == r = True -- Se a palavra for igual à cabeça da lista de palavras reservadas, retorna True
   | otherwise = isReservedWord word rs -- Se a palavra não for igual à cabeça da lista de palavras reservadas, aplica o procedimento para o resto da lista
-
--- Função para verificar se o caractere é separador
-isSeparator :: Char -> IO Bool
-isSeparator c = do
-  separators <- readFile nameFileSep
-  return (isInString separators c)
 
 -- Função para ler as palavras reservadas do arquivo e retornar uma lista de palavras
 listsReservedWords :: IO [String]
