@@ -1,5 +1,4 @@
 import Data.List (nub)
-import Distribution.FieldGrammar qualified as Data
 import System.IO
 
 type ReservedWordCount = (String, Int) -- Palavra reservada e contagem de quantas vezes ela aparece
