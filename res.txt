@@ -1,1 +1,1 @@
-palavra reservada
+int if else return void while
