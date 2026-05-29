@@ -64,10 +64,10 @@ countWords str list
     | otherwise = countWords str (tail list) -- Se a "cabeça" da lista for a string, retorna a tupla normal
 
 -- Função para contar quantas vezes cada palavra aparece em uma lista de palavras e retorna uma lista de tuplas com a palavra e a contagem
-countWordsInList::[String] -> [String] -> [ReservedWordCount]
-countWordsInList resWords wordList
+countReservedWordsInList::[String] -> [String] -> [ReservedWordCount]
+countReservedWordsInList resWords wordList
     | (null resWords) || (null wordList) = [] -- Se as listas forem vazias, retorna uma lista vazia
-    | otherwise = [(reservedWord, countWords reservedWord wordList)] ++ countWordsInList otherReservedWords wordList -- Retorna uma lista com uma tupla contendo a palavra reservada e a contagem concatenada com outras iterações da função.
+    | otherwise = [(reservedWord, countWords reservedWord wordList)] ++ countReservedWordsInList otherReservedWords wordList -- Retorna uma lista com uma tupla contendo a palavra reservada e a contagem concatenada com outras iterações da função.
     where
         reservedWord = head resWords -- Palavra reservada a ser verificada
         otherReservedWords = tail resWords -- Outras palavras reservadas a serem verificadas
@@ -88,8 +88,8 @@ main = do
 
     reservedWordsList <- listsReservedWords
 
-    let countFile1 = countWordsInList reservedWordsList listWordsFile1
-    let countFile2 = countWordsInList reservedWordsList listWordsFile2
+    let countFile1 = countReservedWordsInList reservedWordsList listWordsFile1
+    let countFile2 = countReservedWordsInList reservedWordsList listWordsFile2
 
     putStrLn "Contagem de palavras reservadas no arquivo 1:"
     print countFile1
